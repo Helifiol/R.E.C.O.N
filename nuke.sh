@@ -5,7 +5,7 @@ FILES=$(jq -r '.files[]' "$JSON_FILE")
 echo "$FILE"
 
 for FILE in $FILES; do
-    if [["$OSTYPE" == "linux-gnu"*]]; then
+    if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         if [ -f "$(pwd)$FILE" ]; then
             shred "$(pwd)$FILE"
             rm -r "$(pwd)$FILE"
@@ -13,7 +13,7 @@ for FILE in $FILES; do
         else
             echo "Error: $FILE does not exist."
         fi
-    elif [["$(uname)" == "Darwin23"]]; then
+    elif [[ "$OSTYPE" == "darwin"* ]]; then
         if [ -f "$(pwd)$FILE" ]; then
             gshred "$(pwd)$FILE"
             rm -r "$(pwd)$FILE"
